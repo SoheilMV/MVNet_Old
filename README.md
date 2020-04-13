@@ -44,6 +44,7 @@ var hr = new HttpRequest()
     Ssl = false
 };
 ```
+
 #### Set Cookie
 ```csharp
 CookieDictionary cookie = new CookieDictionary();
@@ -61,3 +62,33 @@ var hr = new HttpRequest();
 hr.Cookies.Add("name1", "value1");
 hr.Cookies.Add("name2", "value2");
 ```
+
+#### Set Header
+```csharp
+HeaderDictionary header = new HeaderDictionary();
+header.Add("name1", "value1");
+header.Add("name2", "value2");
+
+var hr = new HttpRequest()
+{
+    Headers = header
+};
+
+//Or
+
+var hr = new HttpRequest();
+hr.Headers.Add("name1", "value1");
+hr.Headers.Add("name2", "value2");
+```
+
+#### Get Cookies
+````csharp
+string cookie;
+res.Cookies.TryGetValue("name", out cookie);
+````
+
+#### Get Header
+````csharp
+string header;
+res.Headers.TryGetValue("name", out cookie);
+````
