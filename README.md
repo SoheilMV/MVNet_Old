@@ -45,6 +45,21 @@ var hr = new HttpRequest()
 };
 ```
 
+#### Set Proxy
+````csharp
+ProxyClient pc = new ProxyClient(ProxyType.Http, "127.0.0.1:80");
+//Or
+ProxyClient pc = new ProxyClient(ProxyType.Http, "127.0.0.1", 80);
+//Or
+ProxyClient pc = new ProxyClient(ProxyType.Http, "127.0.0.1", 80, "User", "Pass");
+
+var hr = new HttpRequest()
+{
+    UseProxy = true,
+    ProxyClient = pc
+};
+````
+
 #### Set Cookie
 ```csharp
 CookieDictionary cookie = new CookieDictionary();
