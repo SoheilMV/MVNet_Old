@@ -44,6 +44,28 @@ catch (HttpException ex)
     Console.WriteLine(ex.Message);
 }
 ```
+#### How To Request
+````csharp
+var hr = new HttpRequest();
+
+// Get
+var res = hr.Get("https://...");
+
+// Get Async
+var res = await hr.GetAsync("https://...");
+
+// Post
+var res = hr.Post("https://...", "name1=value1&name2=value2"); //Default ContentType is "application/x-www-form-urlencoded"
+
+// Post
+var res = hr.Post("https://...", "name1=value1&name2=value2", "application/x-www-form-urlencoded");
+
+// Post Async
+var res = await hr.Post("https://...", "name1=value1&name2=value2"); //Default ContentType is "application/x-www-form-urlencoded"
+
+// Post Async
+var res = await hr.Post("https://...", "name1=value1&name2=value2", "application/x-www-form-urlencoded");
+````
 
 #### SSL(ON/OFF)
 ```csharp
