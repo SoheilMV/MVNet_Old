@@ -1,4 +1,4 @@
-# [Download](https://github.com/SoheilMV/MVNet/blob/master/MVNet.zip)
+# [Download](https://raw.githubusercontent.com/SoheilMV/MVNet/master/MVNet.zip)
 
 # MVNet
 #### Supports TLS/SSL 
