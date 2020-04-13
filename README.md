@@ -1,11 +1,25 @@
 # MVNet
-- Supports a variety of proxies (Http/s, Socks4, Socks4a, Socks5).
-- Supports TLS/SSL (tls1.0, tls1.1, tls1.2, tls1.3, SSL3.0).
+#### Supports TLS/SSL 
+- tls 1.0
+- tls 1.1
+- tls 1.2
+- tls 1.3
+- SSL 3.0
+
+#### Supports a variety of proxies
+- Http/s
+- Socks4
+- Socks4a
+- Socks5
+
+#### Supports Proxy Authentication
+- Basic Authentication
+- Digest Authentication
+- Windows NT Challenge/Response authentication (ntlm)
 
 #### HTTP Methods
 - GET
 - POST
-
 
 ## Features
 #### Using
@@ -59,6 +73,17 @@ var hr = new HttpRequest()
     UseProxy = true,
     ProxyClient = pc
 };
+````
+
+#### Set Proxy Authentication
+````csharp
+ProxyClient pc = new ProxyClient(ProxyType.Http, "127.0.0.1:80");
+
+pc.ProxyAuthentication = ProxyAuthentication.Basic;
+//Or
+pc.ProxyAuthentication = ProxyAuthentication.Digest;
+//Or
+pc.ProxyAuthentication = ProxyAuthentication.Ntlm;
 ````
 
 #### Set Cookie
