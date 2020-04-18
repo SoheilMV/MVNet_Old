@@ -50,23 +50,19 @@ catch (HttpException ex)
 ````csharp
 var hr = new HttpRequest();
 
-// Get
-var res = hr.Get("https://...");
-
-// Get Async
+// Get & GetAsync
+var res = hr.Get("https://...")
 var res = await hr.GetAsync("https://...");
+//Or
+var res = hr.Get("https://...", httpContent)
+var res = await hr.GetAsync("https://...", httpContent);
 
-// Post
-var res = hr.Post("https://...", "name1=value1&name2=value2"); //Default ContentType is "application/x-www-form-urlencoded"
-
-// Post
-var res = hr.Post("https://...", "name1=value1&name2=value2", "application/x-www-form-urlencoded");
-
-// Post Async
-var res = await hr.Post("https://...", "name1=value1&name2=value2"); //Default ContentType is "application/x-www-form-urlencoded"
-
-// Post Async
-var res = await hr.Post("https://...", "name1=value1&name2=value2", "application/x-www-form-urlencoded");
+// Post & Post Async
+var res = hr.Post("https://...");
+var res = hr.Post("https://...", httpContent);
+//Or
+var res = await hr.Post("https://...");
+var res = await hr.Post("https://...", httpContent);
 ````
 
 #### How to set params
