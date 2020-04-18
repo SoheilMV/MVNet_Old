@@ -167,5 +167,5 @@ res.Headers.TryGetValue("name", out cookie);
 1. fix bugs
 
 * 2.0.0.0
-fix bugs
-1. add RequestParams class
+1. fix bugs
+2. add RequestParams class
