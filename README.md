@@ -95,7 +95,7 @@ ProxyClient pc = new ProxyClient(ProxyType.Http, "127.0.0.1", 80, "User", "Pass"
 var hr = new HttpRequest()
 {
     UseProxy = true,
-    ProxyClient = pc
+    Proxy = pc
 };
 ````
 
