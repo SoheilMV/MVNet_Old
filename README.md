@@ -69,6 +69,19 @@ var res = await hr.Post("https://...", "name1=value1&name2=value2"); //Default C
 var res = await hr.Post("https://...", "name1=value1&name2=value2", "application/x-www-form-urlencoded");
 ````
 
+#### How to set params
+```csharp
+HttpContent content = new HttpContent("{\"name1\":\"value1\",\"name2\":\"value2\"}");
+content.ContentType = "application/x-www-form-urlencoded"; //is default
+content["name1"] = "value1";
+content["name2"] = "value2";
+
+//Or
+
+HttpContent content = new HttpContent("{\"name1\":\"value1\",\"name2\":\"value2\"}");
+content.ContentType = "application/json";
+```
+
 #### SSL(ON/OFF)
 ```csharp
 //ON
