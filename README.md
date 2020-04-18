@@ -164,7 +164,7 @@ res.Cookies.TryGetValue("name", out cookie);
 #### Get Header
 ````csharp
 string header;
-res.Headers.TryGetValue("name", out cookie);
+res.Headers.TryGetValue("name", out header);
 ````
 
 #### Update
