@@ -1,4 +1,4 @@
-# [Download](https://raw.githubusercontent.com/SoheilMV/MVNet/master/MVNet.zip)
+# [Download](https://raw.githubusercontent.com/SoheilMV/MVNet/master/MVNet.rar)
 
 # MVNet
 #### Supports TLS/SSL 
@@ -157,3 +157,15 @@ res.Cookies.TryGetValue("name", out cookie);
 string header;
 res.Headers.TryGetValue("name", out cookie);
 ````
+
+#### Update
+* 2.2.0.0
+fix bugs
+add timeout
+
+* 2.1.0.0
+fix bugs
+
+* 2.0.0.0
+fix bugs
+add RequestParams class
