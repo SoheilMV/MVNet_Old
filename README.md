@@ -67,7 +67,7 @@ var res = await hr.Post("https://...", httpContent);
 
 #### How to set params
 ```csharp
-HttpContent content = new HttpContent("{\"name1\":\"value1\",\"name2\":\"value2\"}");
+HttpContent content = new HttpContent();
 content.ContentType = "application/x-www-form-urlencoded"; //is default
 content["name1"] = "value1";
 content["name2"] = "value2";
