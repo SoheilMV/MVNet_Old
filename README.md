@@ -160,12 +160,12 @@ res.Headers.TryGetValue("name", out cookie);
 
 #### Update
 * 2.2.0.0
-fix bugs
-add timeout
+1. fix bugs
+2. add timeout
 
 * 2.1.0.0
-fix bugs
+1. fix bugs
 
 * 2.0.0.0
 fix bugs
-add RequestParams class
+1. add RequestParams class
