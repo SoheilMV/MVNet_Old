@@ -1,5 +1,3 @@
-# [Download](https://raw.githubusercontent.com/SoheilMV/MVNet/master/MVNet.rar)
-
 # MVNet
 #### Supports TLS/SSL 
 - tls 1.0
@@ -21,7 +19,12 @@
 
 #### HTTP Methods
 - GET
+- HEAD
+- OPTIONS
+- DELETE
 - POST
+- PUT
+- PATCH
 
 ## Features
 #### Using
@@ -46,50 +49,50 @@ catch (HttpException ex)
     Console.WriteLine(ex.Message);
 }
 ```
-#### How To Request
-````csharp
-var hr = new HttpRequest();
 
-// Get & GetAsync
-var res = hr.Get("https://...")
-var res = await hr.GetAsync("https://...");
-//Or
-var res = hr.Get("https://...", httpContent)
-var res = await hr.GetAsync("https://...", httpContent);
-
-// Post & Post Async
-var res = hr.Post("https://...");
-var res = hr.Post("https://...", httpContent);
-//Or
-var res = await hr.Post("https://...");
-var res = await hr.Post("https://...", httpContent);
-````
-
-#### How to set params
+#### How to set StringContent
 ```csharp
-HttpContent content = new HttpContent();
-content.ContentType = "application/x-www-form-urlencoded"; //is default
+StringContent content = new StringContent();
+content.ContentType = "contenttype"; //Default is application/x-www-form-urlencoded
 content["name1"] = "value1";
 content["name2"] = "value2";
 
 //Or
 
-HttpContent content = new HttpContent("{\"name1\":\"value1\",\"name2\":\"value2\"}");
-content.ContentType = "application/json";
+StringContent content = new StringContent("queryparams", "contenttype", false);
 ```
 
-#### SSL(ON/OFF)
+#### How to use MultipartContent
+```csharp
+MultipartContent content = new MultipartContent(); //Generate random boundary
+//Or
+MultipartContent content = new MultipartContent("boundary");
+
+content.AddParam("name", "value");
+content.AddParam("name", "filename", "contenttype");
+```
+
+#### How to use StreamContent
+```csharp
+StreamContent content = new StreamContent(stream); //Default ContentType is application/x-www-form-urlencoded
+//Or
+StreamContent content = new StreamContent(stream, contentType);
+//Or
+StreamContent content = new StreamContent(stream, contentType, size);
+```
+
+#### Ssl Accept All Certificates(ON/OFF)
 ```csharp
 //ON
 var hr = new HttpRequest()
 {
-    Ssl = true
+    AcceptAllCert = true
 };
 
 //OFF
 var hr = new HttpRequest()
 {
-    Ssl = false
+    AcceptAllCert = false
 };
 ```
 
@@ -103,8 +106,14 @@ ProxyClient pc = new ProxyClient(ProxyType.Http, "127.0.0.1", 80, "User", "Pass"
 
 var hr = new HttpRequest()
 {
-    UseProxy = true,
     Proxy = pc
+};
+
+//Or
+
+var hr = new HttpRequest()
+{
+    Proxy = ProxyClient.Parse(type, address);
 };
 ````
 
@@ -157,24 +166,10 @@ hr.Headers.Add("name2", "value2");
 
 #### Get Cookies
 ````csharp
-string cookie;
-res.Cookies.TryGetValue("name", out cookie);
+string cookie = res.GetCookie("name");
 ````
 
 #### Get Header
 ````csharp
-string header;
-res.Headers.TryGetValue("name", out header);
+string header = res.GetHeader("name");
 ````
-
-#### Update
-* 2.2.0.0
-1. fix bugs
-2. add timeout
-
-* 2.1.0.0
-1. fix bugs
-
-* 2.0.0.0
-1. fix bugs
-2. add RequestParams class
