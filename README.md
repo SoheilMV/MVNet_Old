@@ -59,7 +59,7 @@ content["name2"] = "value2";
 
 //Or
 
-StringContent content = new StringContent("queryparams", "contenttype", false);
+StringContent content = new StringContent("queryparams", "contenttype", encode);
 ```
 
 #### How to use MultipartContent
