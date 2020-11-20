@@ -50,7 +50,7 @@ catch (HttpException ex)
 }
 ```
 
-#### How to set StringContent
+#### How to use StringContent
 ```csharp
 StringContent content = new StringContent();
 content.ContentType = "contenttype"; //Default is application/x-www-form-urlencoded
