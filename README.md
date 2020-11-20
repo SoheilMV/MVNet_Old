@@ -98,11 +98,11 @@ var hr = new HttpRequest()
 
 #### Set Proxy
 ````csharp
-ProxyClient pc = new ProxyClient(ProxyType.Http, "127.0.0.1:80");
+ProxyClient pc = new ProxyClient(type, "host:port");
 //Or
-ProxyClient pc = new ProxyClient(ProxyType.Http, "127.0.0.1", 80);
+ProxyClient pc = new ProxyClient(type, "host", port);
 //Or
-ProxyClient pc = new ProxyClient(ProxyType.Http, "127.0.0.1", 80, "User", "Pass");
+ProxyClient pc = new ProxyClient(type, "host", port, "user", "pass");
 
 var hr = new HttpRequest()
 {
@@ -113,13 +113,13 @@ var hr = new HttpRequest()
 
 var hr = new HttpRequest()
 {
-    Proxy = ProxyClient.Parse(type, address);
+    Proxy = ProxyClient.Parse(type, "host:port");
 };
 ````
 
 #### Set Proxy Authentication
 ````csharp
-ProxyClient pc = new ProxyClient(ProxyType.Http, "127.0.0.1:80");
+ProxyClient pc = new ProxyClient(type, "host:port");
 
 pc.ProxyAuthentication = ProxyAuthentication.Basic;
 //Or
