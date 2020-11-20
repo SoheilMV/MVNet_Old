@@ -173,3 +173,6 @@ string cookie = res.GetCookie("name");
 ````csharp
 string header = res.GetHeader("name");
 ````
+
+# Donate
+**Bitcoin :** 124NBhKiPTvunTwbYk47w8Zfi47UDrc6hM
