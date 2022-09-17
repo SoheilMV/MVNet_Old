@@ -1,3 +1,6 @@
+# New Version
+This library uses Rebex, because Rebex did not support cookies before this project was created. To use the new MVNet library, [click here](https://github.com/SoheilMV/MVNet).
+
 # MVNet
 #### Supports TLS/SSL 
 - tls 1.0
